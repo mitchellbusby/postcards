@@ -18,27 +18,50 @@ const { Content } = await render(post);
 
 <Layout>
   <SmolContainer>
-    <div><a href="/">&lt;- Back to all postcards</a></div>
-    <h1>{post.data.title}</h1>
-    <div style="display:flex;flex-direction: column;gap:8px;">
-      <Image
-        class="postcard__image"
-        src={post.data.image}
-        alt={"An image of the postcard for " + post.data.title}
-      />
-      <div style="display: flex;gap:8px">
-        <!-- TODO: use icons here instead to achieve desired effect maybe? -->
-        <div>Location: {post.data.location}</div>
-        <div>Date received: {post.data.dateReceived}</div>
+    <div><a href="/">&lt; Back to all postcards</a></div>
+    <div style="display:flex;flex-direction: column;gap:36px">
+      <div>
+        <h1>{post.data.title}</h1>
+        <div>
+          <div style="display:flex; align-items: center; gap:8px">
+            <div class="postcard__location">
+              <!-- <Icon name="mdi:map-marker" /> -->
+              {post.data.location}
+            </div>
+            <div>|</div>
+            <div class="postcard__date">
+              <!-- <Icon name="mdi:calendar" /> -->
+              {post.data.dateReceived}
+            </div>
+          </div>
+        </div>
       </div>
+      <article>
+        <Image
+          class="postcard__image"
+          src={post.data.image}
+          alt={"An image of the postcard for " + post.data.title}
+        />
+        <Content />
+      </article>
     </div>
-    <Content />
   </SmolContainer>
-</Layout>
 
-<style>
-  .postcard__image {
-    max-width: 100%;
-    height: auto;
-  }
-</style>
+  <style>
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 0;
+    }
+    .postcard__image {
+      max-width: 100%;
+      height: auto;
+    }
+    .postcard__location {
+      font-size: 1.5rem;
+    }
+    .postcard__date {
+      font-size: 1.5rem;
+      color: grey;
+    }
+  </style>
+</Layout>

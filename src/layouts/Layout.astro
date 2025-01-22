@@ -10,8 +10,14 @@
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>Postcards</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
+  <body class="u-playfair-display">
     <slot />
   </body>
 </html>
@@ -38,9 +44,10 @@
     flex-direction: column;
     min-height: 100vh;
     padding: 5vh clamp(1rem, 5vw, 3rem) 1rem;
-    font-family: system-ui, sans-serif;
+    /* font-family: system-ui, sans-serif; */
     line-height: 1.5;
     color: #222;
+    font-size: 20px;
   }
 
   body > * {
@@ -82,5 +89,12 @@
   a {
     color: navy;
     text-underline-offset: 0.15em;
+  }
+
+  body {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
   }
 </style>

@@ -1,0 +1,3 @@
+- disable list motif
+- get better colors
+- fix up the fonts - I really need to pick a good font
