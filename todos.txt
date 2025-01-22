@@ -1,3 +1,5 @@
 - disable list motif
+- turn off visited link style
 - get better colors
 - fix up the fonts - I really need to pick a good font
+- add rss feed support
