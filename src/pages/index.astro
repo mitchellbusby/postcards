@@ -1,33 +1,32 @@
 ---
-import Welcome from "../components/Welcome.astro";
+import SmolContainer from "../components/SmolContainer.astro";
 import Layout from "../layouts/Layout.astro";
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 
 import { getCollection } from "astro:content";
 const postcardEntries = await getCollection("postcards");
 ---
 
 <Layout>
-  <h1>Postcards from friends</h1>
-  <h2>What is this?</h2>
-  <p>
-    This is a collection of the different postcards I've received from friends.
-    At some point I decided to start sending people postcards rather than buying
-    them souvenirs. I really wanted to experience that delight myself, so I've
-    begged people for postcards every time they go overseas.
-  </p>
-  <h2>The postcards</h2>
-  <ul>
-    {
-      postcardEntries.map((post) => (
-        <li>
-          <a href={`/postcards/${post.id}`}>
-            {post.data.title} | {post.data.dateReceived}
-          </a>
-        </li>
-      ))
-    }
-  </ul>
+  <SmolContainer>
+    <h1>Postcards from friends</h1>
+    <h2>What is this?</h2>
+    <p>
+      This is a collection of the different postcards I've received from
+      friends. At some point I decided to start sending people postcards rather
+      than buying them souvenirs. I really wanted to experience that delight
+      myself, so I've begged people for postcards every time they go overseas.
+    </p>
+    <h2>The postcards</h2>
+    <ul>
+      {
+        postcardEntries.map((post) => (
+          <li>
+            <a href={`/postcards/${post.id}`}>
+              {post.data.title} | {post.data.dateReceived}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </SmolContainer>
 </Layout>

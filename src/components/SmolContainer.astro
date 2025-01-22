@@ -1,0 +1,12 @@
+<div class="smol-container">
+  <slot />
+</div>
+<style>
+  /*
+    From https://smolcss.dev/#smol-container
+   */
+  .smol-container {
+    width: min(100% - 3rem, var(--container-max, 60ch));
+    margin-inline: auto;
+  }
+</style>
