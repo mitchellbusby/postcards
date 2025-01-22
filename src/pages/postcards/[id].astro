@@ -1,0 +1,48 @@
+---
+import { Image } from "astro:assets";
+import { getCollection, render } from "astro:content";
+// 1. Generate a new path for every collection entry
+export async function getStaticPaths() {
+  const posts = await getCollection("postcards");
+  return posts.map((post) => ({
+    params: { id: post.id },
+    props: { post },
+  }));
+}
+// 2. For your template, you can get the entry directly from the prop
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<div class="smol-container">
+  <div><a href="/">&lt;- Back to all postcards</a></div>
+  <h1>{post.data.title}</h1>
+  <div style="display:flex;flex-direction: column;gap:8px;">
+    <Image
+      class="postcard__image"
+      src={post.data.image}
+      alt={"An image of the postcard for " + post.data.title}
+    />
+    <div style="display: flex;gap:8px">
+      <!-- TODO: use icons here instead to achieve desired effect maybe? -->
+      <div>Location: {post.data.location}</div>
+      <div>Date received: {post.data.dateReceived}</div>
+    </div>
+  </div>
+  <Content />
+</div>
+
+<!-- TODO: move smol-container to index -->
+<style>
+  /*
+    From https://smolcss.dev/#smol-container
+   */
+  .smol-container {
+    width: min(100% - 3rem, var(--container-max, 60ch));
+    margin-inline: auto;
+  }
+  .postcard__image {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
