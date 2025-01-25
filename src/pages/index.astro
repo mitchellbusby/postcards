@@ -36,5 +36,9 @@ sortedPostcardEntries.sort((a, b) => b.data.publishDate - a.data.publishDate);
       list-style: none;
       padding-left: 0;
     }
+
+    ul > * + * {
+      margin-top: 8px;
+    }
   </style>
 </Layout>

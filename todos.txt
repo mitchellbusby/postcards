@@ -1,6 +1,3 @@
-
-- turn off visited link style (for some reason it's a bad color)
-- fix up the fonts - I really need to pick a good font
 - add rss feed support
 - add opengraph image support
 - add a footer linking back to my site
