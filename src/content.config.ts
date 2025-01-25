@@ -10,10 +10,10 @@ const postcards = defineCollection({
   schema: ({ image }) =>
     z.object({
       title: z.string(),
-      description: z.string(),
       image: image(),
       location: z.string(),
       dateReceived: z.string(),
+      publishDate: z.number(),
     }),
 });
 
