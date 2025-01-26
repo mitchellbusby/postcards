@@ -32,7 +32,8 @@ sortedPostcardEntries.sort((a, b) => b.data.publishDate - a.data.publishDate);
         sortedPostcardEntries.map((post) => (
           <li>
             <a href={`/postcards/${post.id}`}>
-              {post.data.title} | {post.data.dateReceived}
+              {post.data.title} ({post.data.location}) |{" "}
+              {post.data.dateReceived}
             </a>
           </li>
         ))

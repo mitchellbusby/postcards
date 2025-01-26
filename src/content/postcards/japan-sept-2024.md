@@ -1,7 +1,7 @@
 ---
 title: "Autumn foliage"
 image: "./japan-sept-2024.jpeg"
-location: "Japan"
+location: "Magome, Japan"
 dateReceived: September 2024
 publishDate: 1737789981
 ---
