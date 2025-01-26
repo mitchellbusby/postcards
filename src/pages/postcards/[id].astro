@@ -51,10 +51,14 @@ const { Content } = await render(post);
     h1 {
       font-size: 4rem;
       margin-bottom: 0;
+      margin-top: 1rem;
     }
     .postcard__image {
-      max-width: 100%;
-      height: auto;
+      width: 100%; /* Default to fill the width */
+      height: auto; /* Maintain aspect ratio */
+      max-width: 100%; /* Prevent stretching beyond its container */
+      max-height: 75svh; /* Cap the height to the viewport height */
+      object-fit: contain; /* Ensure the entire image fits without distortion */
     }
     .postcard__location {
       font-size: 1.5rem;
