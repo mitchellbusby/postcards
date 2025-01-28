@@ -16,7 +16,7 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 ---
 
-<Layout>
+<Layout title={`${post.data.title}, ${post.data.location}`}>
   <SmolContainer>
     <div><a href="/">&lt; Back to all postcards</a></div>
     <div style="display:flex;flex-direction: column;gap:36px">

@@ -1,5 +1,13 @@
 ---
 import SmolContainer from "../components/SmolContainer.astro";
+type Props = {
+  title: string | { absolute: string };
+};
+
+const htmlTitle =
+  typeof Astro.props.title === "string"
+    ? `${Astro.props.title} | Postcards`
+    : Astro.props.title?.absolute;
 ---
 
 <!doctype html>
@@ -9,7 +17,7 @@ import SmolContainer from "../components/SmolContainer.astro";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
-    <title>Postcards</title>
+    <title>{htmlTitle}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
