@@ -22,17 +22,13 @@ const { Content } = await render(post);
     <div style="display:flex;flex-direction: column;gap:36px">
       <div>
         <h1>{post.data.title}</h1>
-        <div>
-          <div style="display:flex; align-items: center; gap:8px">
-            <div class="postcard__location">
-              <!-- <Icon name="mdi:map-marker" /> -->
-              {post.data.location}
-            </div>
-            <div>|</div>
-            <div class="postcard__date">
-              <!-- <Icon name="mdi:calendar" /> -->
-              {post.data.dateReceived}
-            </div>
+        <div class="postcard__meta">
+          <div class="postcard__location">
+            {post.data.location}
+          </div>
+          <div class="postcard__meta-separator">|</div>
+          <div class="postcard__date">
+            {post.data.dateReceived}
           </div>
         </div>
       </div>
@@ -49,9 +45,13 @@ const { Content } = await render(post);
 
   <style>
     h1 {
-      font-size: 4rem;
+      font-size: 3.5rem;
       margin-bottom: 0;
       margin-top: 1rem;
+
+      @media screen and (width > 450px) {
+        font-size: 4rem;
+      }
     }
     .postcard__image {
       width: 100%; /* Default to fill the width */
@@ -66,6 +66,21 @@ const { Content } = await render(post);
     .postcard__date {
       font-size: 1.5rem;
       color: #535353;
+    }
+    .postcard__meta {
+      display: flex;
+      gap: 8px;
+      flex-direction: column;
+      @media screen and (width > 450px) {
+        align-items: center;
+        flex-direction: row;
+      }
+    }
+    .postcard__meta-separator {
+      display: none;
+      @media screen and (width > 450px) {
+        display: initial;
+      }
     }
   </style>
 </Layout>
