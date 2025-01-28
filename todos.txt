@@ -1,2 +1,1 @@
-- add better mobile formatting for individual pages
 - add opengraph image support

@@ -23,13 +23,13 @@ const { Content } = await render(post);
       <div>
         <h1>{post.data.title}</h1>
         <div class="postcard__meta">
-          <div class="postcard__location">
-            {post.data.location}
-          </div>
-          <div class="postcard__meta-separator">|</div>
-          <div class="postcard__date">
+          <span class="postcard__location">
+            {post.data.location},
+          </span>
+          <!-- <div class="postcard__meta-separator">|</div> -->
+          <span class="postcard__date">
             {post.data.dateReceived}
-          </div>
+          </span>
         </div>
       </div>
       <article>
@@ -45,7 +45,7 @@ const { Content } = await render(post);
 
   <style>
     h1 {
-      font-size: 3.5rem;
+      font-size: 3rem;
       margin-bottom: 0;
       margin-top: 1rem;
 
@@ -60,21 +60,12 @@ const { Content } = await render(post);
       max-height: 75svh; /* Cap the height to the viewport height */
       object-fit: contain; /* Ensure the entire image fits without distortion */
     }
-    .postcard__location {
-      font-size: 1.5rem;
-    }
+
     .postcard__date {
-      font-size: 1.5rem;
       color: #535353;
     }
     .postcard__meta {
-      display: flex;
-      gap: 8px;
-      flex-direction: column;
-      @media screen and (width > 450px) {
-        align-items: center;
-        flex-direction: row;
-      }
+      font-size: 1.5rem;
     }
     .postcard__meta-separator {
       display: none;
