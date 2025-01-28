@@ -26,7 +26,6 @@ const { Content } = await render(post);
           <span class="postcard__location">
             {post.data.location},
           </span>
-          <!-- <div class="postcard__meta-separator">|</div> -->
           <span class="postcard__date">
             {post.data.dateReceived}
           </span>
@@ -36,7 +35,7 @@ const { Content } = await render(post);
         <Image
           class="postcard__image"
           src={post.data.image}
-          alt={"An image of the postcard for " + post.data.title}
+          alt={post.data.imageAltText}
         />
         <Content />
       </article>

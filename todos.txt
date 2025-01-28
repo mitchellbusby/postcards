@@ -1,3 +1,1 @@
-- have correct html titles to layout
-- add alt text support for postcard images
 - add opengraph image support

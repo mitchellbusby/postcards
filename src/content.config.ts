@@ -11,6 +11,7 @@ const postcards = defineCollection({
     z.object({
       title: z.string(),
       image: image(),
+      imageAltText: z.string(),
       location: z.string(),
       dateReceived: z.string(),
       publishDate: z.number(),
