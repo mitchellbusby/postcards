@@ -1,2 +1,0 @@
-- add opengraph image support
-- proof read the home page
