@@ -1,5 +1,5 @@
 {
-  "name": "",
+  "name": "postcards",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -10,9 +10,9 @@
     "add-postcard": "node scripts/add-postcard.js"
   },
   "dependencies": {
-    "@astrojs/rss": "^4.0.14",
+    "@astrojs/rss": "^4.0.15",
     "@iconify-json/mdi": "^1.2.3",
-    "astro": "^5.16.6",
+    "astro": "^5.18.0",
     "astro-icon": "^1.1.5",
     "date-fns": "^4.1.0",
     "slugify": "^1.6.6"
